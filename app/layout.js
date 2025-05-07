@@ -28,9 +28,9 @@ export default function RootLayout({ children }) {
       >
         <nav className="flex items-center bg-(--color-theme-orange) text-white h-16 px-4">
           {/* Logo */}
-          <div className="mr-8 font-bold text-xl">
+          <a href="./main" className="mr-8 font-bold text-xl">
             <img src="/logoText.png" alt="Logo" className="h-8 w-24 inline-block mr-2" />
-          </div>
+          </a>
 
           {/* Navigation Items */}
           <div className="flex space-x-8">
