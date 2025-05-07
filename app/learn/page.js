@@ -33,7 +33,7 @@ export default function Learn() {
                     <div className="px-6 py-4">
                         <ol className="list-decimal pl-5 space-y-2">
                             <li>크롬, 파이어폭스, 엣지, 또는 Brave 브라우저를 열고 MetaMask 확장 프로그램을 추가하세요.</li>
-                            <li>브라우저 상단의 "확장 프로그램" 아이콘을 클릭하고 MetaMask를 고정하세요.</li>
+                            <li>브라우저 상단의 &quot;확장 프로그램&quot; 아이콘을 클릭하고 MetaMask를 고정하세요.</li>
                         </ol>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ export default function Learn() {
                     </div>
                     <div className="px-6 py-4">
                         <ol className="list-decimal pl-5 space-y-2">
-                            <li>MetaMask 아이콘을 클릭한 후 "시작하기"를 선택하세요.</li>
+                            <li>MetaMask 아이콘을 클릭한 후 &quot;시작하기&quot;를 선택하세요.</li>
                             <li>새 지갑을 생성하거나 기존 지갑을 복구할 수 있습니다.</li>
                             <li>지갑 생성 시 비밀번호를 설정하고, 비밀 복구 구문(Seed Phrase)을 안전한 곳에 저장하세요.</li>
                         </ol>
