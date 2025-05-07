@@ -18,7 +18,7 @@ export default function Home() {
                 Trade cryptocurrencies securely and efficiently on our advanced platform.
               </p>
               <div className="flex justify-center gap-4">
-                <Link href="/e_server" className="inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800">
+                <Link href="/mail" className="inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800">
                   Get Started
                 </Link>
                 <Link href="/learn" className="inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100">
