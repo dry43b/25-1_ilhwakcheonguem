@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --themeColor: #e35f21;
+  --buttonColor: #f76928;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-theme-orange: var(--themeColor);
+  --color-button-orange: var(--buttonColor);
 }
 
 @media (prefers-color-scheme: dark) {

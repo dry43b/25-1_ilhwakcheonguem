@@ -1,5 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { authOptions } from "@/pages/api/auth/[...nextauth].js"
+import { getServerSession } from "next-auth"
+import { LoginBtn, LogOutBtn } from "./loginBtn";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +23,11 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let session = await getServerSession(authOptions)
+  if (session) {
+    console.log(session)
+  }
   return (
     <html lang="en">
       <head />
@@ -34,14 +42,28 @@ export default function RootLayout({ children }) {
 
           {/* Navigation Items */}
           <div className="flex space-x-8">
-            <a href="./exchange" className="hover:text-blue-300">거래소</a>
+            <Link href="./exchange" className="hover:text-blue-300">거래소</Link>
             <div className="relative group">
-              <a href="#" className="flex items-center hover:text-blue-300">
+              <Link href="#" className="flex items-center hover:text-blue-300">
                 서비스+
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </a>
+              </Link>
+            </div>
+
+            <div className="flex w-232">
+
+            </div>
+
+            {/* Register Items */}
+            <div className="flex items-center space-x-4">
+                { 
+                  session 
+                    ? <span>{session.user.name} <LogOutBtn/> </span> 
+                    : <LoginBtn></LoginBtn>
+                }
+                <Link href="./register" className="hover:text-blue-300">회원가입</Link>
             </div>
           </div>
         </nav>
