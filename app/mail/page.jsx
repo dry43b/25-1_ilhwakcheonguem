@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Head from 'next/head';
 
+export const runtime = 'edge'
+
 export default function Home() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');

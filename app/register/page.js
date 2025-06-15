@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 export default function Register() {
     return (
         <div className="bg-gray-200 min-h-screen p-5 text-black">

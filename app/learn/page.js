@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 export default function Learn() {
     return (
 <div className="min-h-screen flex flex-col">

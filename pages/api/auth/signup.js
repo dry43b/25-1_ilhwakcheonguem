@@ -1,6 +1,8 @@
 import { connectDB } from "@/util/database";
 import bcrypt from "bcrypt";
 
+export const runtime = 'edge'
+
 export default async function handler(request, response) {
 
   if (request.method === "POST") {

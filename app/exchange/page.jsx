@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
 
+export const runtime = 'edge'
+
 export default function CryptoChart() {
   useEffect(() => {
     // TradingView 스크립트가 로드된 후에 차트 초기화
