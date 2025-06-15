@@ -1,8 +1,3 @@
-import {MongoClient} from 'mongodb';
-import {hash} from 'bcryptjs';
-
-
-
 export default function Register() {
     return (
         <div className="bg-gray-200 min-h-screen p-5 text-black">

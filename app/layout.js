@@ -1,19 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { authOptions } from "@/pages/api/auth/[...nextauth].js"
 import { getServerSession } from "next-auth"
 import { LoginBtn, LogOutBtn } from "./loginBtn";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const notoSansKr = Noto_Sans_KR({ subsets: ['latin'] })
 
 export const metadata = {
   title: "IlHwakCheonGuem",
@@ -32,7 +24,7 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${notoSansKr.variable} antialiased`}
       >
         <nav className="flex items-center bg-(--color-theme-orange) text-white h-16 px-4">
           {/* Logo */}
