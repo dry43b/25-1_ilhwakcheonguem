@@ -52,15 +52,14 @@ export default async function RootLayout({ children }) {
 
             {/* Register Items */}
             <div className="flex items-center space-x-4">
-                <Link href="./register" className="hover:text-blue-300">회원가입</Link>
+              <SignedOut>
+                <SignInButton />
+                <SignUpButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </div>
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
           </div>
         </nav>
         {children}
