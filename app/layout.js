@@ -1,9 +1,14 @@
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { authOptions } from "@/pages/api/auth/[...nextauth].js"
-import { getServerSession } from "next-auth"
-import { LoginBtn, LogOutBtn } from "./loginBtn";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 const notoSansKr = Noto_Sans_KR({ subsets: ['latin'] })
 
@@ -16,11 +21,8 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  let session = await getServerSession(authOptions)
-  if (session) {
-    console.log(session)
-  }
   return (
+    <ClerkProvider>
     <html lang="en">
       <head />
       <body
@@ -50,17 +52,20 @@ export default async function RootLayout({ children }) {
 
             {/* Register Items */}
             <div className="flex items-center space-x-4">
-                { 
-                  session 
-                    ? <span>{session.user.name} <LogOutBtn/> </span> 
-                    : <LoginBtn></LoginBtn>
-                }
                 <Link href="./register" className="hover:text-blue-300">회원가입</Link>
             </div>
+            <SignedOut>
+              <SignInButton />
+              <SignUpButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </nav>
         {children}
       </body>
     </html>
+    </ClerkProvider>
   );
 }

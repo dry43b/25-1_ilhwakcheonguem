@@ -1,13 +1,6 @@
 import Image from "next/image";
-import { connectDB } from "@/util/database";
-import { MongoClient } from "mongodb";
 
 export default async function Home() {
-
-  const clinet = await connectDB;
-  const db = clinet.db('IlHwakCheonGuem');
-  let result = await db.collection("users").find().toArray()
-  console.log(result);
 
   return (
     <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
