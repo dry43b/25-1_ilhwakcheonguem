@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useUser, SignInButton, SignOutButton } from '@clerk/nextjs';
 
+export const runtime = 'edge';
+
 export default function Home() {
   const { isSignedIn, user, isLoaded } = useUser();
   const [message, setMessage] = useState('');
