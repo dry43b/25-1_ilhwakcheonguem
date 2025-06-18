@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       service: 'Gmail',
       auth: {
         user: 'a59603712@gmail.com',
-        pass: 'dqzd snza rzdx qvcs', // Note: Better to use environment variables in production
+        pass: 'jxep ewul dzjp ycob', // Note: Better to use environment variables in production
       },
     });
 
