@@ -45,7 +45,7 @@ export default function CryptoChart() {
         symbol: symbol,
         interval: "60",
         timezone: "Etc/UTC",
-        theme: "dark",
+        theme: "degault",
         style: "1",
         locale: "kr",
         toolbar_bg: "#1f2937",
@@ -81,13 +81,13 @@ export default function CryptoChart() {
         strategy="afterInteractive"
       />
       
-      <div className="bg-gray-900 text-white font-sans p-5 min-h-screen">
+      <div className="bg-white text-black font-sans p-5 min-h-screen">
         <h2 className="text-2xl font-bold mb-6">코인 캔들 차트</h2>
 
         <label htmlFor="coinSelect" className="mr-3">코인 선택:</label>
         <select 
           id="coinSelect" 
-          className="p-3 text-base mb-5 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="p-3 text-base mb-5 bg-white text-blacks rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="BINANCE:BTCUSDT">Bitcoin</option>
           <option value="BINANCE:ETHUSDT">Ethereum</option>

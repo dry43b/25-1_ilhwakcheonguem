@@ -20,51 +20,108 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <head />
-      <body
-        className={`${notoSansKr.variable} antialiased`}
-      >
-        <nav className="flex items-center bg-(--color-theme-orange) text-white h-16 px-4">
-          {/* Logo */}
-          <a href="./main" className="mr-8 font-bold text-xl">
-            <img src="/logoText.png" alt="Logo" className="h-8 w-24 inline-block mr-2" />
-          </a>
+      <html lang="en">
+        <head />
+        <body className={`${notoSansKr.variable} antialiased`}>
+          <nav className="bg-white shadow-lg border-b border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex justify-between items-center h-16">
+                {/* 로고 */}
+                <div className="flex-shrink-0">
+                  <a href="./" className="mr-8 font-bold text-xl m-8">
+    <img 
+  src="/logoText.png" 
+  alt="Logo" 
+  className="h-12 w-auto" 
+/>
+  </a>
+                </div>
 
-          {/* Navigation Items */}
-          <div className="flex space-x-8">
-            <Link href="./exchange" className="hover:text-blue-300">거래소</Link>
-            <div className="relative group">
-              <Link href="#" className="flex items-center hover:text-blue-300">
-                서비스+
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Link>
+                {/* 메뉴 */}
+                <div className="flex items-center space-x-8">
+                  {/* 거래소 링크 */}
+                  <Link 
+                    href="/exchange" 
+                    className="text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    거래소
+                  </Link>
+
+                  {/* 서비스 드롭다운 - CSS only */}
+                  <div className="relative group">
+                    <div className="text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center cursor-pointer">
+                      서비스+
+                      <svg 
+                        className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+
+                    {/* 드롭다운 메뉴 */}
+                    <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="py-1">
+                        <Link 
+                          href="/service/trading" 
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                        >
+                          자동매매
+                        </Link>
+                        <Link 
+                          href="/service/analysis" 
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                        >
+                          시장분석
+                        </Link>
+                        <Link 
+                          href="/service/portfolio" 
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                        >
+                          포트폴리오
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 인증 버튼들 */}
+                  <SignedOut>
+                    <SignInButton mode="modal">
+                      <button className="text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        로그인
+                      </button>
+                    </SignInButton>
+                    
+                    <SignUpButton mode="modal">
+                      <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm">
+                        회원가입
+                      </button>
+                    </SignUpButton>
+                  </SignedOut>
+                  
+                  <SignedIn>
+                    <UserButton 
+                      afterSignOutUrl="/"
+                      appearance={{
+                        elements: {
+                          avatarBox: "h-8 w-8",
+                          userButtonTrigger: "focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-full"
+                        }
+                      }}
+                    />
+                  </SignedIn>
+                </div>
+              </div>
             </div>
-
-            <div className="flex w-232">
-
-            </div>
-
-            {/* Register Items */}
-            <div className="flex items-center space-x-4">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div>
-          </div>
-        </nav>
-        {children}
-      </body>
-    </html>
+          </nav>
+          {children}
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

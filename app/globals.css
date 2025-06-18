@@ -7,9 +7,8 @@
   --foreground: #171717;
   --themeColor: #e35f21;
   --buttonColor: #f76928;
-}
-
-@theme inline {
+  
+  /* @theme inline에 있던 설정들을 :root로 이동 */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -22,6 +21,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* 다크모드에서도 색상 변수 업데이트 */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
   }
 }
 

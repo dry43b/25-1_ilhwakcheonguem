@@ -1,20 +1,129 @@
-import Image from "next/image";
+// app/main/page.js
+"use client";
 
-export const runtime = 'edge';
+import Image from 'next/image';
+import Link from 'next/link';
+import TradingViewTicker from '@/components/TradingViewTicker';
+import TradingViewRealtime from '@/components/TradingViewRealtime';
+import RealTimePriceCard from '@/components/RealTimePriceCard';
 
-export default async function Home() {
+export const runtime = 'edge'
 
+export default function Home() {
   return (
-    <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
-  <div className="text-center">
-    <p className="text-base font-semibold text-indigo-600">404</p>
-    <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">Page not found</h1>
-    <p className="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">Sorry, we couldn’t find the page you’re looking for.</p>
-    <div className="mt-10 flex items-center justify-center gap-x-6">
-      <a href="#" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go back home</a>
-      <a href="#" className="text-sm font-semibold text-gray-900">Contact support <span aria-hidden="true">&rarr;</span></a>
+    <div className="min-h-screen flex flex-col">
+
+      <main>
+        {/* Hero Section */}
+        <section className="w-full bg-white py-12">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-2xl mx-auto">
+              <h1 className="text-3xl text-neutral-950 font-bold mb-4">
+                Welcome to IlHwakCheonGuem
+              </h1>
+              <p className="text-gray-700 rounded-md font-medium transition-colors duration-200 text-center mb-6">
+                Trade cryptocurrencies securely and efficiently on our advanced platform.
+              </p>
+              <div className="flex justify-center gap-4">
+                <Link href="/mail" className="inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[var(--color-button-orange)] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[var(--color-theme-orange)]">
+                  Get Started
+                </Link>
+                <Link href="/learn" className="text-gray-700 inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100">
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Cryptocurrencies Section */}
+        <section className="w-full py-12 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <h1 className="text-3xl text-neutral-950 font-bold mb-8 text-center">
+              Popular Cryptocurrencies
+            </h1>
+            <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex flex-wrap justify-center gap-6">
+              <RealTimePriceCard 
+                symbol="btcusdt" 
+                name="Bitcoin (BTC)"
+              />
+              <RealTimePriceCard 
+                symbol="ethusdt" 
+                name="Ethereum (ETH)"
+              />
+              <RealTimePriceCard 
+                symbol="adausdt" 
+                name="Cardano (ADA)"
+              />
+            </div>
+              <TradingViewTicker />
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="w-full bg-white py-12">
+          <div className="container mx-auto px-4">
+            <h1 className="text-3xl text-neutral-950 font-bold mb-8 text-center">
+              Why Choose IlHwakCheonGuem?
+            </h1>
+            <div className="flex flex-wrap justify-center gap-6">
+              <div className="rounded-xl border bg-white shadow max-w-sm flex-1 min-w-[250px]">
+                <div className="px-6 py-4 border-b flex items-center gap-2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m3 9 4-4 4 4"></path>
+                    <path d="m3 15 4 4 4-4"></path>
+                    <path d="M13 6h5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-5"></path>
+                    <path d="M13 18V6"></path>
+                  </svg>
+                  <h2 className="text-gray-700 text-xl font-bold">Fast Transactions</h2>
+                </div>
+                <div className="text-gray-700 px-6 py-4">
+                  <p>Execute trades quickly and efficiently on our high-performance platform.</p>
+                </div>
+              </div>
+              
+              <div className="rounded-xl border bg-white shadow max-w-sm flex-1 min-w-[250px]">
+                <div className="px-6 py-4 border-b flex items-center gap-2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <h2 className="text-gray-700 text-xl font-bold">Secure Storage</h2>
+                </div>
+                <div className="text-gray-700 px-6 py-4">
+                  <p>Your assets are protected with state-of-the-art security measures.</p>
+                </div>
+              </div>
+              
+              <div className="rounded-xl border bg-white shadow max-w-sm flex-1 min-w-[250px]">
+                <div className="px-6 py-4 border-b flex items-center gap-2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>
+                  </svg>
+                  <h2 className="text-gray-700 text-xl font-bold">24/7 Support</h2>
+                </div>
+                <div className="text-gray-700 px-6 py-4">
+                  <p>Our dedicated team is always available to assist you with any issues.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="flex items-center gap-2 bg-neutral-900 border-t px-4 py-6 mt-auto">
+        <p className="text-sm text-gray-500">© 2025 IlHwakCheonGuem. All rights reserved.</p>
+        <nav className="ml-auto flex gap-4">
+          <a href="#" className="text-sm text-gray-500 hover:underline">
+            Terms of Service
+          </a>
+          <a href="#" className="text-sm text-gray-500 hover:underline">
+            Privacy
+          </a>
+        </nav>
+      </footer>
     </div>
-  </div>
-</main>
   );
 }

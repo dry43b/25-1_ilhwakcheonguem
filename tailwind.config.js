@@ -8,8 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--color-background)",
+        foreground: "var(--color-foreground)",
+        'theme-orange': "var(--color-theme-orange)",
+        'button-orange': "var(--color-button-orange)",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", "Arial", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
     },
   },
