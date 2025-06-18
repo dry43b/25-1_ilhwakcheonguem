@@ -91,18 +91,6 @@ export default function Learn() {
             </div>
         </section>
     </div>
-    
-    <div className="flex items-center gap-2 bg-neutral-900 border-t px-4 py-6 mt-auto">
-        <p className="text-sm text-gray-500">© 2024 IlHwakCheonGuem. All rights reserved.</p>
-        <nav className="ml-auto flex gap-4">
-            <a href="#" className="text-sm text-gray-500 hover:underline">
-                Terms of Service
-            </a>
-            <a href="#" className="text-sm text-gray-500 hover:underline">
-                Privacy
-            </a>
-        </nav>
-    </div>
 </div>
     );
 }

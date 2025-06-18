@@ -9,6 +9,8 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
+import { Providers } from './providers'
+import ThemeToggle from '@/components/ThemeToggle'
 
 const notoSansKr = Noto_Sans_KR({ subsets: ['latin'] })
 
@@ -119,7 +121,20 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </nav>
+          <Providers>
           {children}
+          </Providers>
+          <footer className="flex items-center gap-2 bg-neutral-900 border-t px-4 py-6 mt-auto">
+        <p className="text-sm text-gray-500">© 2025 IlHwakCheonGuem. All rights reserved.</p>
+        <nav className="ml-auto flex gap-4">
+          <a href="#" className="text-sm text-gray-500 hover:underline">
+            Terms of Service
+          </a>
+          <a href="#" className="text-sm text-gray-500 hover:underline">
+            Privacy
+          </a>
+        </nav>
+      </footer>
         </body>
       </html>
     </ClerkProvider>
