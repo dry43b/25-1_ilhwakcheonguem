@@ -3,7 +3,7 @@ export const runtime = 'edge'
 export default function Learn() {
     return (
 <div className="min-h-screen flex flex-col">
-    <div className="w-full bg-white py-12">
+    <div className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 py-12">
         <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto">
                 <h1 className="text-3xl text-neutral-950 font-bold mb-4">MetaMask 설치 가이드</h1>
@@ -12,9 +12,9 @@ export default function Learn() {
     </div>
     
     <div>
-        <section className="w-full bg-white py-12">
+        <section className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 py-12">
             <div className="container mx-auto px-4">
-                <div className="rounded-xl border bg-white shadow max-w-2xl mx-auto">
+                <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-2xl mx-auto">
                     <div className="px-6 py-4 border-b">
                         <h2 className="text-gray-700 text-xl font-bold">1. MetaMask 다운로드</h2>
                     </div>
@@ -28,7 +28,7 @@ export default function Learn() {
         
         <section className="w-full py-12 bg-gray-100">
             <div className="container mx-auto px-4">
-                <div className="rounded-xl border bg-white shadow max-w-2xl mx-auto">
+                <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-2xl mx-auto">
                     <div className="px-6 py-4 border-b">
                         <h2 className="text-gray-700 text-xl font-bold">2. 브라우저 확장 프로그램 설치</h2>
                     </div>
@@ -42,9 +42,9 @@ export default function Learn() {
             </div>
         </section>
         
-        <section className="w-full bg-white py-12">
+        <section className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 py-12">
             <div className="container mx-auto px-4">
-                <div className="rounded-xl border bg-white shadow max-w-2xl mx-auto">
+                <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-2xl mx-auto">
                     <div className="px-6 py-4 border-b">
                         <h2 className="text-gray-700 text-xl font-bold">3. 지갑 생성</h2>
                     </div>
@@ -61,7 +61,7 @@ export default function Learn() {
         
         <section className="w-full py-12 bg-gray-100">
             <div className="container mx-auto px-4">
-                <div className="rounded-xl border bg-white shadow max-w-2xl mx-auto">
+                <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-2xl mx-auto">
                     <div className="px-6 py-4 border-b">
                         <h2 className="text-gray-700 text-xl font-bold">4. 설치 완료</h2>
                     </div>
@@ -72,9 +72,9 @@ export default function Learn() {
             </div>
         </section>
         
-        <section className="w-full bg-white py-12">
+        <section className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 py-12">
             <div className="container mx-auto px-4">
-                <div className="rounded-xl border bg-white shadow max-w-2xl mx-auto">
+                <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-2xl mx-auto">
                     <div className="px-6 py-4 border-b">
                         <h2 className="text-gray-700 text-xl font-bold">5. 이용방법</h2>
                     </div>

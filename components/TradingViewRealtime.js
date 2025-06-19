@@ -65,7 +65,7 @@ export default function TradingViewRealtime() {
   }, []);
 
   return (
-    <div className="w-full bg-white p-4 rounded-lg shadow">
+    <div className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 p-4 rounded-lg shadow">
       <h3 className="text-xl font-bold mb-4 text-center">실시간 차트</h3>
       <div 
         ref={containerRef}

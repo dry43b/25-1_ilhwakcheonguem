@@ -6,7 +6,7 @@ export default function RealTimePriceCard({ symbol, name, icon }) {
   const { price, changePercent } = useTradingViewPrice(symbol);
 
   return (
-    <div className="rounded-xl border bg-white shadow max-w-sm flex-1 min-w-[250px]">
+    <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-sm flex-1 min-w-[250px]">
       <div className="px-6 py-4 border-b">
         <div className="flex items-center gap-2">
           {icon && <img src={icon} alt={name} className="w-6 h-6" />}

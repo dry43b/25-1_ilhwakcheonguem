@@ -68,7 +68,7 @@ export default function Home() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto"></div>
-          <p className="mt-2 text-gray-600">로딩 중...</p>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">로딩 중...</p>
         </div>
       </div>
     );
@@ -79,9 +79,9 @@ export default function Home() {
     return (
       <div className="min-h-screen bg-gray-50 py-12">
         <main className="container mx-auto px-4">
-          <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">로그인이 필요합니다</h2>
-            <p className="text-gray-600 mb-6">코인 요청을 위해 먼저 로그인해주세요.</p>
+          <div className="max-w-md mx-auto bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-xl shadow-lg p-8 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">로그인이 필요합니다</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">코인 요청을 위해 먼저 로그인해주세요.</p>
             <SignInButton mode="modal">
               <button className="w-full bg-orange-500 text-white py-3 px-4 rounded-lg font-medium hover:bg-orange-600 transition-colors">
                 로그인
@@ -97,9 +97,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <main className="container mx-auto px-4">
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8">
+        <div className="max-w-md mx-auto bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-xl shadow-lg p-8">
           {/* 사용자 정보 표시 */}
-          <div className="text-center mb-6 pb-6 border-b border-gray-200">
+          <div className="text-center mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-center space-x-4">
               <img 
                 src={user.imageUrl} 
@@ -107,10 +107,10 @@ export default function Home() {
                 className="w-12 h-12 rounded-full"
               />
               <div className="text-left">
-                <p className="font-semibold text-gray-900">
+                <p className="font-semibold text-gray-900 dark:text-white">
                   {user.firstName} {user.lastName}
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   {user.emailAddresses[0].emailAddress}
                 </p>
               </div>
@@ -124,8 +124,8 @@ export default function Home() {
 
           <form id="infoForm" onSubmit={handleSubmit} className="space-y-6">
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">코인갯수를 입력해주세요</h2>
-              <h4 className="text-gray-600">이메일 확인에 시간이 걸릴 수 있습니다.</h4>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">코인갯수를 입력해주세요</h2>
+              <h4 className="text-gray-600 dark:text-gray-300">이메일 확인에 시간이 걸릴 수 있습니다.</h4>
             </div>
             
             <div>

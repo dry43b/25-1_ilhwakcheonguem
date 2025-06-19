@@ -15,7 +15,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="w-full bg-white py-12">
+        <section className="w-full bg-white dark:bg-gray-700 border-gray-300 py-12">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto">
               <h1 className="text-3xl text-neutral-950 font-bold mb-4">
@@ -31,7 +31,7 @@ export default function Home() {
                   시작하기
                   {/*Get Started*/}
                 </Link>
-                <Link href="/learn" className="text-gray-700 inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100">
+                <Link href="/learn" className="text-gray-700 inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100">
                   시작 알아보기
                   {/*Learn More*/}
                 </Link>
@@ -68,14 +68,14 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="w-full bg-white py-12">
+        <section className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-3xl text-neutral-950 font-bold mb-8 text-center">
               왜 일확천금을 선택해야 할까요?
               {/*Why Choose IlHwakCheonGuem?*/}
             </h1>
             <div className="flex flex-wrap justify-center gap-6">
-              <div className="rounded-xl border bg-white shadow max-w-sm flex-1 min-w-[250px]">
+              <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-sm flex-1 min-w-[250px]">
                 <div className="px-6 py-4 border-b flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="m3 9 4-4 4 4"></path>
@@ -91,7 +91,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="rounded-xl border bg-white shadow max-w-sm flex-1 min-w-[250px]">
+              <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-sm flex-1 min-w-[250px]">
                 <div className="px-6 py-4 border-b flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
@@ -104,7 +104,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="rounded-xl border bg-white shadow max-w-sm flex-1 min-w-[250px]">
+              <div className="rounded-xl border bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 shadow max-w-sm flex-1 min-w-[250px]">
                 <div className="px-6 py-4 border-b flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>

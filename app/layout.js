@@ -25,116 +25,123 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="ko" suppressHydrationWarning>
         <head />
-        <body className={`${notoSansKr.variable} antialiased`}>
-          <nav className="bg-white shadow-lg border-b border-gray-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center h-16">
-                {/* 로고 */}
-                <div className="flex-shrink-0">
-                  <a href="./" className="mr-8 font-bold text-xl m-8">
-    <img 
-  src="/logoText.png" 
-  alt="Logo" 
-  className="h-12 w-auto" 
-/>
-  </a>
-                </div>
-
-                {/* 메뉴 */}
-                <div className="flex items-center space-x-8">
-                  {/* 거래소 링크 */}
-                  <Link 
-                    href="/exchange" 
-                    className="text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                  >
-                    거래소
-                  </Link>
-
-                  {/* 서비스 드롭다운 - CSS only */}
-                  <div className="relative group">
-                    <div className="text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center cursor-pointer">
-                      서비스+
-                      <svg 
-                        className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-
-                    {/* 드롭다운 메뉴 */}
-                    <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                      <div className="py-1">
-                        <Link 
-                          href="/service/trading" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                        >
-                          자동매매
-                        </Link>
-                        <Link 
-                          href="/service/analysis" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                        >
-                          시장분석
-                        </Link>
-                        <Link 
-                          href="/service/portfolio" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                        >
-                          포트폴리오
-                        </Link>
-                      </div>
-                    </div>
+        <body className={`${notoSansKr.variable} antialiased bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:bg-gray-900 transition-colors`}>
+          <Providers>
+            <nav className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 transition-colors">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center h-16">
+                  {/* 로고 */}
+                  <div className="flex-shrink-0">
+                    <a href="./" className="mr-8 font-bold text-xl m-8">
+                      <img 
+                        src="/logoText.png" 
+                        alt="Logo" 
+                        className="h-12 w-auto" 
+                      />
+                    </a>
                   </div>
 
-                  {/* 인증 버튼들 */}
-                  <SignedOut>
-                    <SignInButton mode="modal">
-                      <button className="text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                        로그인
-                      </button>
-                    </SignInButton>
+                  {/* 메뉴 */}
+                  <div className="flex items-center space-x-8">
+                    {/* 거래소 링크 */}
+                    <Link 
+                      href="/exchange" 
+                      className="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                    >
+                      거래소
+                    </Link>
+
+                    {/* 서비스 드롭다운 */}
+                    <div className="relative group">
+                      <div className="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center cursor-pointer">
+                        서비스+
+                        <svg 
+                          className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+
+                      {/* 드롭다운 메뉴 - 테마 토글 추가 */}
+                      <div className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 dark:border-gray-600 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div className="py-1">
+                          <Link 
+                            href="/mail" 
+                            className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                          >
+                            매매 신청
+                          </Link>
+                          <Link 
+                            href="/service/analysis" 
+                            className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                          >
+                            시장분석
+                          </Link>
+                          
+                          {/* 구분선 */}
+                          <div className="border-t border-gray-200 dark:border-gray-700 dark:border-gray-600 my-1"></div>
+                          
+                          {/* 테마 토글 */}
+                          <div className="px-4 py-2">
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-gray-700 dark:text-gray-300">테마</span>
+                              <ThemeToggle />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 인증 버튼들 */}
+                    <SignedOut>
+                      <SignInButton mode="modal">
+                        <button className="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                          로그인
+                        </button>
+                      </SignInButton>
+                      
+                      <SignUpButton mode="modal">
+                        <button className="bg-orange-600 hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm">
+                          회원가입
+                        </button>
+                      </SignUpButton>
+                    </SignedOut>
                     
-                    <SignUpButton mode="modal">
-                      <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm">
-                        회원가입
-                      </button>
-                    </SignUpButton>
-                  </SignedOut>
-                  
-                  <SignedIn>
-                    <UserButton 
-                      afterSignOutUrl="/"
-                      appearance={{
-                        elements: {
-                          avatarBox: "h-8 w-8",
-                          userButtonTrigger: "focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-full"
-                        }
-                      }}
-                    />
-                  </SignedIn>
+                    <SignedIn>
+                      <UserButton 
+                        afterSignOutUrl="/"
+                        appearance={{
+                          elements: {
+                            avatarBox: "h-8 w-8",
+                            userButtonTrigger: "focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-full"
+                          }
+                        }}
+                      />
+                    </SignedIn>
+                  </div>
                 </div>
               </div>
-            </div>
-          </nav>
-          <Providers>
-          {children}
+            </nav>
+            
+            {children}
+            
+            <footer className="flex items-center gap-2 bg-neutral-900 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 px-4 py-6 mt-auto transition-colors">
+              <p className="text-sm text-gray-500 dark:text-gray-400">© 2025 IlHwakCheonGuem. All rights reserved.</p>
+              <nav className="ml-auto flex gap-4">
+                <a href="#" className="text-sm text-gray-500 dark:text-gray-400 hover:underline">
+                  Terms of Service
+                </a>
+                <a href="#" className="text-sm text-gray-500 dark:text-gray-400 hover:underline">
+                  Privacy
+                </a>
+              </nav>
+            </footer>
           </Providers>
-          <footer className="flex items-center gap-2 bg-neutral-900 border-t px-4 py-6 mt-auto">
-        <p className="text-sm text-gray-500">© 2025 IlHwakCheonGuem. All rights reserved.</p>
-        <nav className="ml-auto flex gap-4">
-          <a href="#" className="text-sm text-gray-500 hover:underline">
-            Terms of Service
-          </a>
-          <a href="#" className="text-sm text-gray-500 hover:underline">
-            Privacy
-          </a>
-        </nav>
-      </footer>
         </body>
       </html>
     </ClerkProvider>
