@@ -7,6 +7,8 @@ import { PseudoEthManager } from '@/utils/pseudoETH'
 import IntegratedWallet from '@/components/IntergratedWallet'
 import UnifiedTransaction from '@/components/UnifiedTransaction'
 
+export const runtime = 'edge';
+
 export default function Dashboard() {
   const { user } = useUser()
   const [provider, setProvider] = useState(null)
